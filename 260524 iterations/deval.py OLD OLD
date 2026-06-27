@@ -1,0 +1,13 @@
+class PVA:
+    def __init__(self, prime, exp=1):
+        self.tuple = [(prime, exp)]  # lazy storage: list of (p, exp)
+
+    def __mul__(self, other):
+        # Lazy multiply: just append tuples, no phi_n reduction
+        new = PVA(2, 0)  # dummy init
+        new.tuple = self.tuple + other.tuple
+        return new
+
+def phi_lookup(p):
+    # Dummy LUT for cache_test later
+    return p - 1

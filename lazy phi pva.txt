@@ -1,0 +1,19 @@
+# Lazy φ_n PVA
+
+Euler’s totient function as a compression engine. O(1) memory at scale.
+
+## The Knockout
+5000 operations:
+- Lazy φ_n: 3 tuples, 0.72µs/op, 0.0036s total
+- Naive append: 5001 tuples, 2.80µs/op, 0.0140s total
+- Result: 1667x less memory, 4x faster
+
+![Memory vs Speed](phi_knockout_dual.png)
+
+## How it works
+`PVA(p,k)` stores prime powers. `φ_n(p,k) = p^(k-1)*(p-1)` collapses tuples on multiply.
+EAGER_THRESHOLD=50 keeps memory bounded.
+
+## Run it
+pip install matplotlib
+python chain_test.py

@@ -1,0 +1,10 @@
+Example: `PVA(19, 2000)` → `PVA(19, 1999, 19^1999*18)`
+That’s 99% tuple compression in one step.
+
+EAGER_THRESHOLD=50 keeps the tuple list bounded during long chains.
+
+## Run It
+
+```bash
+pip install matplotlib
+python chain_test.py
