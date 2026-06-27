@@ -1,5 +1,0 @@
-# 1. Install the global system LaTeX compiler
-sudo apt update && sudo apt install -y texlive-latex-base texlive-latex-recommended
-
-# 2. Compile your source code directly to a PDF
-pdflatex jordan_curve_research.tex
